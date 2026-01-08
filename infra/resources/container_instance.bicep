@@ -75,6 +75,9 @@ resource managed_identity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023
 resource container_instance 'Microsoft.ContainerInstance/containerGroups@2024-10-01-preview' = {
   name: name
   location: location
+  tags: {
+    SecurityControl: 'Ignore'
+  }
   identity: {
     type: 'UserAssigned'
     userAssignedIdentities: {

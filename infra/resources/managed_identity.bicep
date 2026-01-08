@@ -11,6 +11,9 @@ param location string = resourceGroup().location
 resource managed_identity 'Microsoft.ManagedIdentity/userAssignedIdentities@2023-01-31' = {
   name: name
   location: location
+  tags: {
+    SecurityControl: 'Ignore'
+  }
 }
 
 //----------- Outputs -----------//

@@ -13,6 +13,9 @@ param blob_container_name string = 'contoso-outdoors-manuals'
 //----------- Storage Account Resource -----------//
 resource storage_account 'Microsoft.Storage/storageAccounts@2023-05-01' = {
   name: name
+  tags: {
+    SecurityControl: 'Ignore'
+  }
   location: location
   kind: 'StorageV2'
   properties: {

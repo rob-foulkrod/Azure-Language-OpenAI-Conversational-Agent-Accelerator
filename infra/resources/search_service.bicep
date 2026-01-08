@@ -11,6 +11,9 @@ param location string = resourceGroup().location
 resource search_service 'Microsoft.Search/searchServices@2024-06-01-preview' = {
   name: name
   location: location
+  tags: {
+    SecurityControl: 'Ignore'
+  }
   identity: {
     type: 'SystemAssigned'
   }

@@ -62,6 +62,9 @@ resource ai_foundry 'Microsoft.CognitiveServices/accounts@2025-04-01-preview' = 
   name: name
   location: location
   kind: 'AIServices'
+  tags: {
+    SecurityControl: 'Ignore'
+  }
   identity: {
     type: 'SystemAssigned'
   }
@@ -86,6 +89,9 @@ resource ai_foundry 'Microsoft.CognitiveServices/accounts@2025-04-01-preview' = 
 
   resource agents_project 'projects@2025-04-01-preview' = {
     name: agents_project_name
+    tags: {
+    SecurityControl: 'Ignore'
+    }
     location: location
     identity: {
       type: 'UserAssigned'
